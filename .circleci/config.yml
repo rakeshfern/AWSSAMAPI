@@ -12,6 +12,6 @@ workflows:
       # 4. imported-name/job
       - sam/deploy:
           name: deploy-production
-         
+          s3-bucket: 
           stack-name: production-stack
           template: template.yaml
