@@ -36,7 +36,7 @@ Outputs:
     Description: "API Gateway endpoint URL for Prod stage for Hello World functions"
     Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/login/"
   LoginFunction:
-    Description: "Login Lambda Function ARN"
+    Description: "Login Lambda Function ARNS"
     Value: !GetAtt LoginFunction.Arn
   LoginFunctionIamRole:
     Description: "Implicit IAM Role created for Login function"
