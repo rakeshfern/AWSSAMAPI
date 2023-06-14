@@ -3,7 +3,7 @@ import json
 def lambda_handler(event, context):
    
    password=json.loads(event["body"])['Password']
-   if password =='whatever':
+   if password =='Whatever':
       return {'statusCode':200,
       'headers':{'Content-Type':'application/json'},'body':"true"}
    else:
