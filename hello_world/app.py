@@ -4,7 +4,15 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return jsonify(message='Hello from Flask on AWS Lambda!')
+    return {
+        "statusCode": 200,
+        "body": json.dumps({
+            "message": "hello world",
+            # "location": ip.text.replace("\n", "")
+        }),
+    }
+
 
 if __name__ == '__main__':
     app.run()
+     
