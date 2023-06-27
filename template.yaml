@@ -15,8 +15,8 @@ Resources:
   LoginFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:
-      CodeUri: Login/
-      Handler: app.lambda_handler
+      CodeUri: hello_world/
+      Handler: lambda_handler.lambda_handler
       Runtime: python3.10
       Architectures:
         - x86_64
@@ -24,8 +24,8 @@ Resources:
         Login:
           Type: Api # More info about API Event Source: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#api
           Properties:
-            Path: /login
-            Method: post
+            Path: /helloworld
+            Method: get
       
 
 Outputs:
@@ -34,7 +34,7 @@ Outputs:
   # https://github.com/awslabs/serverless-application-model/blob/master/docs/internals/generated_resources.rst#api
   LoginApi:
     Description: "API Gateway endpoint URL for Prod stage for Hello World functions"
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/login/"
+    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/helloworld/"
   LoginFunction:
     Description: "Login Lambda Function ARN"
     Value: !GetAtt LoginFunction.Arn
